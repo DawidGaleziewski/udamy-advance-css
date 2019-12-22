@@ -1,0 +1,56 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* #1 Basic reset */
+
+* {
+  /* Remove margin and padding from all elements that could be applied by browser */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* #1.1 Basic reset on body */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /*1.7 bigger then normal*/
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  /* We will put the gradient on top of the image.
+  We can add multiple images, order is important */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      /* in order to make it transparent we can jus click on the color and change the transparency of the color in rgba*/
+        rgba(40, 180, 133, 0.8)
+    ),
+    url('../img/hero.jpg');
+  background-size: cover;
+  background-position: top; /* Makes shoure that whenever the size of the container changes, top of the picture stays in its place. Bottom will get cropped when resizing the image */
+
+  /* Cordinates specification: */
+  /* 1 - 0 0 is does not move */
+  /* 2 - 100% on x axis from the left, stays on the same path from the top */
+  /* 3 - 100% from top as default, and from top we change it to 70% from default 100%*/
+  /* We can also change units to px or vh/vw */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /*We specify cordinates of each corners of our picture that we want to be visible
+    Corners specified are: top-left(x,y), top-right(x,y), bottom-left(x,y), bottom-right(x,y)
+  */
+}
