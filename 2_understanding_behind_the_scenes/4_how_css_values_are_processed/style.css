@@ -1,0 +1,14 @@
+.section {
+  font-size: 1.5rem; /*! rem is better then px most time for responsive design. */
+  width: 280px;
+  background-color: orangered;
+}
+
+p {
+  width: 140px;
+  background-color: green;
+}
+
+.amazing {
+  width: 66%;
+}

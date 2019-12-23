@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+}
+
+.button {
+  font-size: 20px;
+  color: white;
+  background-color: blue;
+}
+
+a {
+  background-color: purple !important;
+}
+
+#nav div.pull-right a.button {
+  background-color: orangered;
+}
+
+/* Hover is also counted as a class. If the specificity of original item is to hight the element color wont change */
+#nav a.button:hover {
+  background-color: yellow;
+}
