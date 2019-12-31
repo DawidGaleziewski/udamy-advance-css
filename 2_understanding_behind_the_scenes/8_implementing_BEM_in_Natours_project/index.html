@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/icon-font.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>Natours | Exciting tours for adventurous people</title>
+  </head>
+  <body>
+    <header class="header">
+      <!--header can exist in multiple places, that makes it a BLOCK-->
+      <div class="header__logo-box">
+        <!-- logo-box existing outside of the header would not make much sense. Therefore it should be a ELEMENT -->
+        <img
+          class="header__logo"
+          src="./img/logo-white.png"
+          alt="logo"
+        /><!-- Logo also could not exist outside the header. That makes it a ELEMENT-->
+      </div>
+
+      <div class="header__text-box">
+        <h1 class="heading-primary">
+          <!--heading-primary could be a BLOCK on its own as it could exist outside of the header. Therefore we should make it a BLOCK and not a ELEMENT -->
+          <span class="heading-primary--main">Outdoors</span
+          ><!-- main and sub are just diffrent versions of the heading primary. Therefore it is a MODIFIER-->
+          <span class="heading-primary--sub">is where life happens</span>
+        </h1>
+
+        <!-- btn is a block as it can exist outside of a block -->
+        <!-- white and animated are both flags/ MODIFIER as they are a diffrent version of a same element -->
+        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+      </div>
+    </header>
+  </body>
+</html>
