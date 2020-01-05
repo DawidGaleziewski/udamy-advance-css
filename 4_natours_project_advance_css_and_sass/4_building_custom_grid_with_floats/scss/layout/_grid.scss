@@ -1,0 +1,68 @@
+.row {
+  // current standard for grid width is 1140px. But we want to use rem.
+
+  // We want to use max-width and not width, so that our layout is fluid and adapts
+
+  // if view is smaller then 1140px it will simply fill the whole space.
+  max-width: $grid-width;
+
+  // We want to always center the row
+  margin: 0 auto;
+
+  // color just for testing
+  background-color: #eee;
+
+  // Better solution we can use gutter for everything but last
+  &:not(:last-child) {
+    margin-bottom: $guttern-vertical; // Gutter between rows
+  }
+
+  // Clearfix for the float solution
+  @include clearfix;
+
+  //! Attribute selector - elegant fix for applying rules to all classes starting with col-
+  [class^='col-'] {
+    // Float columns to set them horizontal.
+    //! due to fact that we use float the parent .row will have height of 0 as it will collapse
+    float: left;
+
+    //Set up column gutter
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+
+    background-color: orangered; // Just for test
+  }
+
+  //! In order to use sass variables we use #{$var} syntax for interpolation
+  .col-1-of-2 {
+    // one column is 100% - gutter size / 2
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(
+      2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(
+      2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-3-of-4 {
+    width: calc(
+      3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
+    );
+  }
+}

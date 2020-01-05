@@ -1,0 +1,11 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+
+  //! We can calculate our triangle from the header
+  // Header height: 95vh;, clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  // 95vh is the height of the header. length of the right border is 75vh. So we know the height of the triangle is 95vh - 75vh = 20vh;
+  margin-top: -20vh; // We move the whole section -20vh. Therefore it will be going "under" the header just right amount
+
+  // Header is part of our typography so we need to write in in base/typography partial
+}
