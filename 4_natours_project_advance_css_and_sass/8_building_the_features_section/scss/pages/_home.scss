@@ -1,0 +1,31 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url('../img/nat-4.jpg');
+  background-size: cover;
+
+  //! skew effect
+  // We could use clip path
+  // We can also skew entire section
+  transform: skewY(-7deg);
+
+  // Skew boxes in another direction to put them bac in normal position
+  // We want to put it here and not in the component itself
+  // ! we can use direct child selector to skew back all items in this section
+  // Direct children are important. We do not want to skew i.e text inside the p tags!
+  & > * {
+    transform: skewY(7deg);
+  }
+
+  margin-top: -12.5rem;
+}
